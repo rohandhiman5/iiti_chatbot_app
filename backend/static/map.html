@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <title>IIT Indore Navigation</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+            <style>
+                #map { height: 100vh; width: 100%; }
+            </style>
+        </head>
+        <body>
+            <div id="map"></div>
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+            <script>
+                var map = L.map('map').setView([22.532418, 75.9241], 15);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                var start = L.latLng(22.532418, 75.9241);
+                var end = L.latLng(22.531091, 75.923477);
+
+                L.marker(start, {title: "Start"}).addTo(map).bindPopup("Start Location");
+                L.marker(end, {title: "End"}).addTo(map).bindPopup("End Location");
+
+                L.Routing.control({
+                    waypoints: [start, end],
+                    routeWhileDragging: true,
+                    createMarker: function(i, wp, n) {
+                        return L.marker(wp.latLng, {
+                            title: i === 0 ? "Start" : "End"
+                        });
+                    }
+                }).addTo(map);
+            </script>
+        </body>
+        </html>
+        

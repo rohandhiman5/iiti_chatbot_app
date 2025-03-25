@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23282027373",
+    "project_id": "flutterbot-b5090",
+    "storage_bucket": "flutterbot-b5090.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23282027373:android:ef98ea5b72bc30579f2864",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9OGE1UdHXHD0injg-Vup9jWJ3aDCbKHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
